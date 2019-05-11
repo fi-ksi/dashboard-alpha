@@ -6,6 +6,10 @@ import model
 from db import session
 
 
+def years():
+    return session.query(model.Year).all()
+
+
 year = None
 
 try:
