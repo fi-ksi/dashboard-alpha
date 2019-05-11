@@ -3,3 +3,4 @@ __pycache__
 *.pyc
 config.py
 ksi-py3-venv
+.ipynb_checkpoints
