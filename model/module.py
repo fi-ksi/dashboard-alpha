@@ -42,5 +42,12 @@ class Module(Base):
 
     evaluations = relationship(
         'Evaluation',
-        primaryjoin='Evaluation.module==Module.id'
+        primaryjoin='Evaluation.module == Module.id'
+    )
+    submitters = relationship(
+        'User',
+        primaryjoin='Evaluation.module == Module.id',
+        secondaryjoin='Evaluation.user == User.id',
+        secondary='evaluations',
+        viewonly=True,
     )

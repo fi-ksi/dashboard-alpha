@@ -20,3 +20,10 @@ class Year(Base):
                        nullable=False, default=0)
 
     waves = relationship('Wave', primaryjoin='Wave.year==Year.id')
+    tasks = relationship(
+        'Task',
+        primaryjoin='Year.id == Wave.year',
+        secondaryjoin='Wave.id == Task.wave',
+        secondary='waves',
+        viewonly=True,
+    )
