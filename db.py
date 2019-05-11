@@ -1,7 +1,5 @@
 import sqlalchemy
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.interfaces import ConnectionProxy
-import sys
 
 import config
 
