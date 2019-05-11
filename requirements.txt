@@ -17,9 +17,12 @@ jupyter-console==6.0.0
 jupyter-core==4.4.0
 MarkupSafe==1.1.1
 mistune==0.8.4
+mysqlclient==1.4.2.post1
 nbconvert==5.5.0
 nbformat==4.4.0
 notebook==5.7.8
+numpy==1.16.3
+pandas==0.24.2
 pandocfilters==1.4.2
 parso==0.4.0
 pexpect==4.7.0
@@ -30,6 +33,7 @@ ptyprocess==0.6.0
 Pygments==2.4.0
 pyrsistent==0.15.1
 python-dateutil==2.8.0
+pytz==2019.1
 pyzmq==18.0.1
 qtconsole==4.4.4
 Send2Trash==1.5.0
