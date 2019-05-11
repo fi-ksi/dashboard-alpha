@@ -32,4 +32,6 @@ class User(Base):
                         default=datetime.datetime.utcnow,
                         server_default=text('CURRENT_TIMESTAMP'))
 
-    tasks = relationship("Task", primaryjoin='User.id == Task.author')
+    tasks = relationship('Task', primaryjoin='User.id == Task.author')
+    evaluations = relationship('Evaluation',
+                               primaryjoin='User.id == Evaluation.user')

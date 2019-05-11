@@ -1,6 +1,7 @@
 import datetime
 
 from sqlalchemy import Column, Integer, String, Boolean, DECIMAL
+from sqlalchemy.orm import relationship
 
 from . import Base
 
@@ -17,3 +18,5 @@ class Year(Base):
     sealed = Column(Boolean, nullable=False, default=False)
     point_pad = Column(DECIMAL(precision=10, scale=1, asdecimal=False),
                        nullable=False, default=0)
+
+    waves = relationship('Wave', primaryjoin='Wave.year==Year.id')

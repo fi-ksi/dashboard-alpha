@@ -2,6 +2,7 @@ import datetime
 
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.ext.hybrid import hybrid_property, hybrid_method
+from sqlalchemy.orm import relationship
 
 from . import Base
 from .year import Year
@@ -26,3 +27,5 @@ class Wave(Base):
     @hybrid_property
     def public(self):
         return self.time_published <= datetime.datetime.utcnow()
+
+    tasks = relationship('Task', primaryjoin='Task.wave==Wave.id')

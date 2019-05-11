@@ -1,5 +1,6 @@
 from sqlalchemy import (Column, Integer, SmallInteger, String, Text, Enum,
                         Boolean, ForeignKey, text, DECIMAL)
+from sqlalchemy.orm import relationship
 
 from . import Base
 from .task import Task
@@ -38,3 +39,8 @@ class Module(Base):
     custom = Column(Boolean, nullable=False, default=False)
     action = Column(Text)
     data = Column(Text)
+
+    evaluations = relationship(
+        'Evaluation',
+        primaryjoin='Evaluation.module==Module.id'
+    )
