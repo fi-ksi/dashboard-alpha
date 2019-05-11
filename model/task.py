@@ -40,6 +40,7 @@ class Task(Base):
     )
     modules = relationship('Module', primaryjoin='Task.id==Module.task',
                            order_by='Module.order')
+    r_wave = relationship(Wave)
     evaluation_public = Column(Boolean, nullable=False, default=False)
 
     git_path = Column(String(255), nullable=True)

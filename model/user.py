@@ -3,6 +3,7 @@ import datetime
 from sqlalchemy import Column, Integer, String, Boolean, Enum, Text, text
 from sqlalchemy.types import TIMESTAMP
 from sqlalchemy.orm import relationship
+from sqlalchemy.ext.hybrid import hybrid_property
 
 from . import Base
 
@@ -31,6 +32,10 @@ class User(Base):
     registered = Column(TIMESTAMP, nullable=False,
                         default=datetime.datetime.utcnow,
                         server_default=text('CURRENT_TIMESTAMP'))
+
+    @hybrid_property
+    def name(self):
+        return self.first_name + ' ' + self.last_name
 
     tasks = relationship('Task', primaryjoin='User.id == Task.author')
     evaluations = relationship('Evaluation',

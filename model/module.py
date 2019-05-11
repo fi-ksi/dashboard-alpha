@@ -51,3 +51,4 @@ class Module(Base):
         secondary='evaluations',
         viewonly=True,
     )
+    r_task = relationship(Task)

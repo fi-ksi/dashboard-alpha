@@ -2,6 +2,7 @@ import datetime
 from sqlalchemy import (Column, Integer, Text, ForeignKey, text, DECIMAL,
                         Boolean)
 from sqlalchemy.types import TIMESTAMP
+from sqlalchemy.orm import relationship
 
 from . import Base
 from .user import User
@@ -29,3 +30,7 @@ class Evaluation(Base):
     full_report = Column(Text, nullable=False, default="")
     time = Column(TIMESTAMP, default=datetime.datetime.utcnow,
                   server_default=text('CURRENT_TIMESTAMP'))
+
+    r_module = relationship(Module)
+    r_evaluator = relationship(User, foreign_keys=[evaluator])
+    r_user = relationship(User, foreign_keys=[user])

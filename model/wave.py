@@ -29,3 +29,4 @@ class Wave(Base):
         return self.time_published <= datetime.datetime.utcnow()
 
     tasks = relationship('Task', primaryjoin='Task.wave==Wave.id')
+    r_year = relationship(Year)
