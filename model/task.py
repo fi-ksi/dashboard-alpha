@@ -54,6 +54,11 @@ class Task(Base):
     )
     eval_comment = Column(Text, nullable=True, default='')
 
+    def __str__(self):
+        return self.title
+
+    __repr__ = __str__
+
 
 class SolutionComment(Base):
     __tablename__ = 'solution_comments'

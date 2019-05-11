@@ -30,3 +30,8 @@ class Wave(Base):
 
     tasks = relationship('Task', primaryjoin='Task.wave==Wave.id')
     r_year = relationship(Year)
+
+    def __str__(self):
+        return self.caption
+
+    __repr__ = __str__

@@ -27,3 +27,8 @@ class Year(Base):
         secondary='waves',
         viewonly=True,
     )
+
+    def __str__(self):
+        return self.year
+
+    __repr__ = __str__

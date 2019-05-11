@@ -52,3 +52,8 @@ class Module(Base):
         viewonly=True,
     )
     r_task = relationship(Task)
+
+    def __str__(self):
+        return self.name
+
+    __repr__ = __str__

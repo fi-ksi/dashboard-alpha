@@ -40,3 +40,8 @@ class User(Base):
     tasks = relationship('Task', primaryjoin='User.id == Task.author')
     evaluations = relationship('Evaluation',
                                primaryjoin='User.id == Evaluation.user')
+
+    def __str__(self):
+        return self.name
+
+    __repr__ = __str__
