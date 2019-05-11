@@ -8,7 +8,7 @@ import util
 def points_per_module_all_years():
     return session.query(
         model.Wave.year.label('year_id'),
-        model.Evaluation.user.label('user'),
+        model.Evaluation.user.label('user_id'),
         func.max(model.Evaluation.points).label('points'),
     ).\
         join(model.Evaluation.r_module).join(model.Module.r_task).\

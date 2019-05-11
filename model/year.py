@@ -32,3 +32,8 @@ class Year(Base):
         return self.year
 
     __repr__ = __str__
+
+    def __lt__(self, other):
+        if not isinstance(other, Year):
+            return NotImplemented
+        return self.id < other.id
