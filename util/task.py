@@ -51,3 +51,10 @@ def max_points_per_year(bonus=False):
                   int(year.tasks_count) if year.tasks_count else 0)
         for year in points_per_year
     }
+
+
+def large_tasks():
+    """[task]"""
+    return session.query(model.Task).\
+        join(model.Task.modules).\
+        filter(model.Module.type == model.ModuleType.GENERAL)
