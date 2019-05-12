@@ -1,0 +1,7 @@
+<FilesMatch deploy.sh>
+	AddHandler cgi-script .sh
+	AuthType Basic
+	AuthName "Restricted Content!"
+	AuthUserFile /etc/apache2/.htpasswd
+	Require valid-user
+</FilesMatch>
