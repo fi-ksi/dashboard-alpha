@@ -8,10 +8,4 @@ build/%.html: notebooks/%.ipynb
 clean:
 	rm -rf $(TARGETS)
 
-git-fetch:
-	git fetch origin
-	git reset --hard origin/master
-
-kleobis-deploy: clean git-fetch all
-
-.PHONY: all clean kleobis-deploy git-fetch
+.PHONY: all clean
