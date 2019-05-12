@@ -9,12 +9,25 @@ def points_per_module_all_years():
     return session.query(
         model.Wave.year.label('year_id'),
         model.Evaluation.user.label('user_id'),
+        model.Evaluation.module.label('module_id'),
         func.max(model.Evaluation.points).label('points'),
     ).\
         join(model.Evaluation.r_module).join(model.Module.r_task).\
         join(model.Task.r_wave).\
         group_by(model.Wave.year, model.Evaluation.user,
                  model.Evaluation.module)
+
+
+def points_per_module(year_id):
+    return session.query(
+        model.Evaluation.user.label('user_id'),
+        model.Evaluation.module.label('module_id'),
+        func.max(model.Evaluation.points).label('points'),
+    ).\
+        join(model.Evaluation.r_module).join(model.Module.r_task).\
+        join(model.Task.r_wave).\
+        filter(model.Wave.year == year_id).\
+        group_by(model.Evaluation.user, model.Evaluation.module)
 
 
 def _max_points_per_wave(bonus=False):

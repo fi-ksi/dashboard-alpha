@@ -35,3 +35,8 @@ class Wave(Base):
         return self.caption
 
     __repr__ = __str__
+
+    def __lt__(self, other):
+        if not isinstance(other, Wave):
+            return NotImplemented
+        return self.id < other.id

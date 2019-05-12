@@ -59,6 +59,11 @@ class Task(Base):
 
     __repr__ = __str__
 
+    def __lt__(self, other):
+        if not isinstance(other, Task):
+            return NotImplemented
+        return self.id < other.id
+
 
 class SolutionComment(Base):
     __tablename__ = 'solution_comments'
