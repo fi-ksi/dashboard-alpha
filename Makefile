@@ -1,12 +1,12 @@
-SOURCES=$(patsubst notebooks/%.ipynb, build/%.html, $(wildcard notebooks/*.ipynb))
+TARGETS=$(patsubst notebooks/%.ipynb, build/%.html, $(wildcard notebooks/*.ipynb))
 
-all: $(SOURCES)
+all: $(TARGETS)
 
 build/%.html: notebooks/%.ipynb
 	./export_monitoring_notebook $< $@
 
 clean:
-	rm -rf build/*
+	rm -rf $(TARGETS)
 
 git-fetch:
 	git fetch origin
