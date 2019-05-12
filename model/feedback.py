@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, ForeignKey, Text, text
 from sqlalchemy.types import TIMESTAMP
 import datetime
+from sqlalchemy.orm import relationship
 
 from . import Base
 from .user import User
@@ -29,3 +30,6 @@ class Feedback(Base):
     content = Column(Text, nullable=False)
     lastUpdated = Column(TIMESTAMP, default=datetime.datetime.utcnow,
                          server_default=text('CURRENT_TIMESTAMP'))
+
+    r_task = relationship(Task)
+    r_user = relationship(User)
