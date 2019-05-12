@@ -1,4 +1,5 @@
 <FilesMatch deploy.sh>
+	Options +ExecCGI
 	AddHandler cgi-script .sh
 	AuthType Basic
 	AuthName "Restricted Content!"
