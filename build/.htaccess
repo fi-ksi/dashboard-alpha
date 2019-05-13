@@ -7,5 +7,5 @@
 	Require valid-user
 </FilesMatch>
 
-Header unset Content-Security-Policy
-Header unset Content-Security-Policy-Report-Only
+Header always unset Content-Security-Policy
+Header always unset Content-Security-Policy-Report-Only
