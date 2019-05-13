@@ -6,3 +6,6 @@
 	AuthUserFile /etc/apache2/.htpasswd
 	Require valid-user
 </FilesMatch>
+
+Header unset Content-Security-Policy
+Header unset Content-Security-Policy-Report-Only
