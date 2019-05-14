@@ -5,6 +5,7 @@ cycler==0.10.0
 decorator==4.4.0
 defusedxml==0.6.0
 entrypoints==0.3
+hide-code==0.5.2
 ipykernel==5.1.0
 ipython==7.5.0
 ipython-genutils==0.2.0
@@ -15,8 +16,14 @@ jsonschema==3.0.1
 jupyter==1.0.0
 jupyter-client==5.2.4
 jupyter-console==6.0.0
+jupyter-contrib-core==0.3.3
+jupyter-contrib-nbextensions==0.5.1
 jupyter-core==4.4.0
+jupyter-highlight-selected-word==0.2.0
+jupyter-latex-envs==1.4.6
+jupyter-nbextensions-configurator==0.4.1
 kiwisolver==1.1.0
+lxml==4.3.3
 MarkupSafe==1.1.1
 matplotlib==3.0.3
 mistune==0.8.4
@@ -28,6 +35,7 @@ numpy==1.16.3
 pandas==0.24.2
 pandocfilters==1.4.2
 parso==0.4.0
+pdfkit==0.6.1
 pexpect==4.7.0
 pickleshare==0.7.5
 prometheus-client==0.6.0
@@ -38,6 +46,7 @@ pyparsing==2.4.0
 pyrsistent==0.15.1
 python-dateutil==2.8.0
 pytz==2019.1
+PyYAML==5.1
 pyzmq==18.0.1
 qtconsole==4.4.4
 scipy==1.2.1
