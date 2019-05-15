@@ -54,6 +54,15 @@ class Task(Base):
     )
     eval_comment = Column(Text, nullable=True, default='')
 
+    r_thread = relationship(Thread)
+    discussion_posts = relationship(
+        'Post',
+        primaryjoin='Task.thread == Thread.id',
+        secondaryjoin='Thread.id == Post.thread',
+        secondary='threads',
+        viewonly=True,
+    )
+
     def __str__(self):
         return self.title
 

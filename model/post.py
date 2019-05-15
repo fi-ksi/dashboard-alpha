@@ -29,3 +29,4 @@ class Post(Base):
                     ondelete='CASCADE'))
 
     reactions = relationship('Post')
+    r_thread = relationship(Thread)
