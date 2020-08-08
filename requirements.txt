@@ -5,7 +5,6 @@ cycler==0.10.0
 decorator==4.4.2
 defusedxml==0.6.0
 entrypoints==0.3
-hide-code==0.5.5
 importlib-metadata==1.6.0
 ipykernel==5.2.0
 ipython==7.13.0
@@ -23,6 +22,7 @@ jupyter-core==4.6.3
 jupyter-highlight-selected-word==0.2.0
 jupyter-latex-envs==1.4.6
 jupyter-nbextensions-configurator==0.4.1
+hide-code==0.5.5
 kiwisolver==1.1.0
 lxml==4.5.0
 MarkupSafe==1.1.1
