@@ -5,6 +5,8 @@ from sqlalchemy import desc
 import model
 from db import session
 
+fake_year_shim_enabled = False
+fake_year_shim_id = 0
 
 def years():
     return session.query(model.Year).all()
@@ -17,3 +19,10 @@ try:
 except SQLAlchemyError:
     session.rollback()
     raise
+
+
+if fake_year_shim_enabled:
+    try:
+        year = years()[fake_year_shim_id]
+    except:
+        raise "Year probably out of range"

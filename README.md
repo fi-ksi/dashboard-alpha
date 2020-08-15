@@ -4,16 +4,22 @@
 
 ## Software needed
 
- * Python 3.5
+ * Python 3.6 (including dev package)
  * virtualenv
- * packages from `requirements.txt`
+ * packages from `requirements.txt` (building of the packages requires gcc and libmysqlclient-dev)
+ * make
+ 
+```
+sudo apt install -y python3.6 python3.6-dev python3.6-venv libmysqlclient-dev virtualenv gcc make
+```
+
 
 ## Installation
 
  1. Clone this repository.
  2. Install virtualenv & packages into `ksi-py3-venv` directory.
     ```
-    virtualenv -p python3 ksi-py3-venv
+    virtualenv -p python3.6 ksi-py3-venv
     source ksi-py3-venv/bin/activate
     pip3 install -r requirements.txt
     ```
