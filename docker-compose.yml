@@ -6,10 +6,10 @@ services:
     volumes:
       - ./:/myapp
     ports:
-      - "8888:8888"
+      - "8080:8080"
 
     # If you want manual bash, do the following.
     # 1. Uncomment the following line:
-    #entrypoint: tail -f /dev/null # Uncomment this if you want to start bash manually after the 
+    # entrypoint: tail -f /dev/null # Uncomment this if you want to start bash manually after the 
     # 2. Do `docker-compose up -d --build`
     # 3. After it finishes, run `docker exec -it web-frontend_ember_1 /bin/bash`

@@ -2,7 +2,17 @@
 
 <https://ksi.fi.muni.cz/monitor>
 
-## Software needed
+## Docker version
+
+```
+git clone https://github.com/fi-ksi/dashboard.git
+# edit config.py, see instruction from the non docker version
+docker-compose up --build
+```
+
+## Non Docker version
+
+### Software needed
 
  * Python 3.6 (including dev package)
  * virtualenv
